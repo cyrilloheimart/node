@@ -11,4 +11,4 @@ app.use(cors());
 const estoque = require('./routes/estoque');
 app.use('/estoque', estoque);
 
-app.listen(environment['port']);
+app.listen(process.env.PORT || environment['port']);

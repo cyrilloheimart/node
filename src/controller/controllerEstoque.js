@@ -1,6 +1,10 @@
 const uuidv4 = require('../utils/uuid4');
 const { Carro } = require('../validators/carro');
 
+var formidable = require('formidable');
+const fsextra = require('fs-extra');
+const fs = require('fs');
+
 let estoque = [
 	{
 		id: 'ae153c8e-262b-45b8-ad90-62b0834f79ba',
@@ -91,7 +95,44 @@ const calcularValorCarrosVenda = (req, res) => {
 	res.status(200).json(valor);
 };
 
+const download = (req, res) => {
+	const { nomeArquivo } = req.params;
+
+	try {
+		let readStream = fs.createReadStream('./src/storage/' + nomeArquivo);
+
+		readStream.on('open', function () {
+			readStream.pipe(res);
+		});
+	} catch (err) {
+		res.status(500).send('não foi possível realizar o download do arquivo');
+	}
+};
+
+const upload = (req, res) => {
+	var form = new formidable.IncomingForm();
+	form.parse(req, async function (err, fields, files) {
+		const { type, name, path, size } = files.arquivo;
+
+		if (size > 111110000) {
+			res.status(400).send('Tamanho do arquivo inválido');
+		}
+
+		if (type.indexOf('image/png') != -1) {
+			try {
+				await fsextra.move(path, './src/storage/' + name);
+				res.status(200).send('Upload executado!');
+			} catch (err) {
+				res.status(400).send('Arquivo já existe');
+			}
+		} else {
+			res.status(400).send('Tipo inválido');
+		}
+	});
+};
+
 module.exports = {
+	upload,
 	listarCarros,
 	buscarCarroPorId,
 	incluirCarro,
@@ -99,4 +140,5 @@ module.exports = {
 	excluirCarro,
 	calcularIPVAPorModelo,
 	calcularValorCarrosVenda,
+	download,
 };

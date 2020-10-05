@@ -6,6 +6,8 @@ const {
 	excluirCarro,
 	calcularIPVAPorModelo,
 	calcularValorCarrosVenda,
+	download,
+	upload,
 } = require('../controller/controllerEstoque');
 
 const estoque = require('express').Router();
@@ -15,6 +17,9 @@ estoque.get('/valor', calcularValorCarrosVenda);
 estoque.get('/buscar/:filtro', filtroCarro);
 estoque.get('/:modelo/ipva', calcularIPVAPorModelo);
 estoque.get('/:id', buscarCarroPorId);
+
+estoque.get('/download/:nomeArquivo', download);
+estoque.post('/upload', upload);
 
 estoque.post('/incluir', incluirCarro);
 
