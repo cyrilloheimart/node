@@ -6,6 +6,8 @@
 
 # Convergerimos
 
+[Front end Publicado](https://covid-coron.ga/)
+
 [x] O projeto deverá estar em um repositório GIT
 [x] Definir rotas e controles modularizados
 [x] Utilizar a função map, filter e reduce
