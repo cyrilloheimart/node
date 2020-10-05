@@ -1,4 +1,3 @@
-> Integrantes
 > Angellica Passos
 > Cyrillo
 > Mayra Garcia
