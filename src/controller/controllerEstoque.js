@@ -17,6 +17,36 @@ let estoque = [
 		valor: 35000.25,
 		fipe: 34000.5,
 		km: 235,
+		url:
+			'https://s2.glbimg.com/cLTt7HGaUl4FXQTPCPuAxNDmcBY=/620x413/e.glbimg.com/og/ed/f/original/2017/07/20/novo_up_pepper_8.jpg',
+	},
+	{
+		id: 'ae153c8e-262b-45b8-ad90-63b0d34f79ba',
+		modelo: 'GOL',
+		marca: 'VW',
+		cor: 'PRETO',
+		chassi: '239872323232',
+		placa: 'APK-2333',
+		ano: 2018,
+		valor: 18000.25,
+		fipe: 22000.5,
+		km: 400,
+		url:
+			'https://s2.glbimg.com/M4nmIlX0O45jbCKGWGeO-oUU1vM=/620x413/e.glbimg.com/og/ed/f/original/2019/02/19/gol.jpg',
+	},
+	{
+		id: '8bd5e2d4-a113-467a-b765-68b02a384bfd',
+		modelo: 'C180',
+		marca: 'Mercedes',
+		cor: 'prata',
+		chassi: '2323232',
+		placa: 'MRA-3233',
+		ano: 2020,
+		valor: 120000.25,
+		fipe: 143000.5,
+		km: 1,
+		url:
+			'https://s2.glbimg.com/s3BXiRXWfbU8AuILhoYqUEmCH70=/512x320/smart/e.glbimg.com/og/ed/f/original/2016/07/23/c180-2016.png',
 	},
 ];
 
