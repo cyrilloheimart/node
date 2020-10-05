@@ -105,7 +105,7 @@ const download = (req, res) => {
 			readStream.pipe(res);
 		});
 	} catch (err) {
-		res.status(500).send('não foi possível realizar o download do arquivo');
+		res.status(500).send('não foi possível realizar o download do arquivo.');
 	}
 };
 
